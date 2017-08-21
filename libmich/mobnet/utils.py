@@ -7,12 +7,12 @@
 # *
 # * This program is free software: you can redistribute it and/or modify
 # * it under the terms of the GNU General Public License version 2 as published
-# * by the Free Software Foundation. 
+# * by the Free Software Foundation.
 # *
 # * This program is distributed in the hope that it will be useful,
 # * but WITHOUT ANY WARRANTY; without even the implied warranty of
 # * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-# * GNU General Public License for more details. 
+# * GNU General Public License for more details.
 # *
 # * You will find a copy of the terms and conditions of the GNU General Public
 # * License version 2 in the "license.txt" file or
@@ -22,7 +22,7 @@
 # *--------------------------------------------------------
 # * File Name : mobnet/utils.py
 # * Created : 2015-02-18
-# * Authors : Benoit Michau 
+# * Authors : Benoit Michau
 # *--------------------------------------------------------
 #*/
 
@@ -93,7 +93,7 @@ TRA_COLOR_END = '\x1b[0m'
 # logging facility
 _log_file = '/tmp/corenet.log'
 def log(msg='', withdate=True):
-    #print('[%s] %s' % (datetime.now(), msg))
+    print('[%s] %s' % (datetime.now(), msg))
     if withdate:
         open(_log_file, 'a').write('[{0}] {1}\n'.format(datetime.now().strftime('%Y-%m-%d %H:%M:%S.%f')[:-3], msg))
     else:
@@ -176,7 +176,7 @@ def get_imsi(naspdu):
     # from basic ID (EPS_IDENTIFY)
     if hasattr(naspdu, 'ID'):
         ident = naspdu.ID.getobj()
-    
+
     # from EPS ID (ATTACH / DETACH)
     elif hasattr(naspdu, 'EPS_ID'):
         ident = naspdu.EPS_ID.getobj()
